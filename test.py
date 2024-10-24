@@ -1,5 +1,5 @@
 import numpy as np
-from game_code import Game2048Env
+from game_env import Game2048Env
 
 env = Game2048Env()
 observation, info = env.reset()
