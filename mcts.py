@@ -97,12 +97,14 @@ def mcts_game_thread(thread_number, total_score_list, max_tile_list, total_score
   observation, info = env.reset()
   done = False
   total_score = 0
+  count = 0
 
   while not done:
     action = mcts_best_move(env, 4, 8)
     #print(action)
     observation, score, done, truncated, info = env.step(action)
-    #print(f'Thread {thread_number} took action {action}')
+    count += 1
+    print(f'Thread {thread_number} took action {action} ({count})')
     total_score += score
 
     if done:
